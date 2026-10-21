@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "author": "RANIKA IoT Team",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_temp",
+      "top": -160,
+      "left": -180,
+      "attrs": { "label": "Temp (34)" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot_bpm",
+      "top": -160,
+      "left": 120,
+      "attrs": { "label": "BPM (35)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_emg",
+      "top": 159.8,
+      "left": -182.4,
+      "attrs": { "color": "red", "label": "Emergência (12)" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 160,
+      "left": 120,
+      "attrs": { "label": "Buzzer (26)" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_red",
+      "top": 210,
+      "left": -40,
+      "attrs": { "color": "red", "label": "Alerta (27)" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_green",
+      "top": 210,
+      "left": 60,
+      "attrs": { "color": "green", "label": "OK (14)" }
+    },
+    { "type": "wokwi-resistor", "id": "r1", "top": 290, "left": -40, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 290, "left": 60, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot_temp:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot_temp:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot_temp:SIG", "esp:34", "green", [ "v0" ] ],
+    [ "pot_bpm:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot_bpm:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot_bpm:SIG", "esp:35", "blue", [ "v0" ] ],
+    [ "btn_emg:1.1", "esp:12", "orange", [ "v0" ] ],
+    [ "btn_emg:2.1", "esp:GND.1", "black", [ "v0" ] ],
+    [ "buzzer:1", "esp:26", "purple", [ "v0" ] ],
+    [ "buzzer:2", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led_red:A", "esp:27", "red", [ "v0" ] ],
+    [ "led_red:C", "r1:1", "black", [ "v0" ] ],
+    [ "r1:2", "esp:GND.2", "black", [ "v0" ] ],
+    [ "led_green:A", "esp:14", "green", [ "v0" ] ],
+    [ "led_green:C", "r2:1", "black", [ "v0" ] ],
+    [ "r2:2", "esp:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
