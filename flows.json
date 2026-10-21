@@ -1,0 +1,32 @@
+[
+    {
+        "id": "e683da7bcca02efb",
+        "type": "mysql",
+        "z": "98ab7df9d36c6852",
+        "mydb": "4ae3081467679271",
+        "name": "",
+        "x": 710,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ae3081467679271",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "uti_hospitalar",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "4aae71f9c3ab373e",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-mysql": "3.0.0"
+        }
+    }
+]
